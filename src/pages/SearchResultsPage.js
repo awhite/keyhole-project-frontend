@@ -50,7 +50,7 @@ const SearchResultsPage = () => {
     async function fetchData() {
       setIsLoading(true);
       try {
-        const result = await fetch(`https://lastcollage.io/keyhole/search?${qs.stringify({ q: query, start }, { format: 'RFC1738' })}`);
+        const result = await fetch(`http://172.105.23.47:8001/search?${qs.stringify({ q: query, start }, { format: 'RFC1738' })}`);
         const { results, count } = await result.json();
         setData(results);
         setTotal(count);
